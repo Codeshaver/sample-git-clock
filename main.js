@@ -7,10 +7,16 @@ function startTime() {
   var h = today.getHours();
   var m = today.getMinutes();
   var s = today.getSeconds();
-  var a = today.getHours()-12;
-  var button = document.createElement('button');
+  // var a = today.getHours()-12;
+
+  // button.addEventListener("click", militaryTime());
   m = checkTime(m);
   s = checkTime(s);
+
+// function militaryTime(){
+//       h -=12
+//       return false;
+//   }  
 
   if (c==1) {
 c = "January";
@@ -73,19 +79,19 @@ w = "Saturday";
 w = "Sunday"; 
 }
 
-function myFunction() {
-  ;
-}
-
   document.getElementById('txt').innerHTML =
  w + " " + c + "," + " " + d + "," + " " + y + "@" + h + ":" + m + ":" + s;
 
 }
+// document.getElementById("militaryTime").onclick = function(){
+//   militaryTime()
+// } 
 
-//is setInterval a function and if so why doesn't it need a function qualifier
+
 setInterval(startTime, 1000);
 function checkTime(i) {
   if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
   return i;
 }
+// militaryTime(false);
 startTime();
